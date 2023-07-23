@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const CandidateSchema = new mongoose.Schema({
     name:{
         type:String,
         min: 3,
@@ -16,6 +16,20 @@ const UserSchema = new mongoose.Schema({
         type:String,
         default:"",
         required:true,
+    },
+    email:{
+        type:String,
+    },
+    phone:{
+        type:Number,
+    },
+    address:{
+        type:String,
+    },
+    dob:{
+        type:Date,
     }
     
 })
+
+module.exports = mongoose.model("Candidate", CandidateSchema)

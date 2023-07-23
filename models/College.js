@@ -16,6 +16,13 @@ rating:{
     type:Number,
     required:true,
 },
+established:{
+    type:Date,
+    
+},
+students:{
+    type:Number,
+},
 ad:{
     type:Date,
     required:true,

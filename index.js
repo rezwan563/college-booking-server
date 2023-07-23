@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const collegeRouter = require('./routes/colleges')
+const candidateRouter = require('./routes/candidates')
 
 const port = process.env.PORT || 5000;
 
@@ -17,6 +19,9 @@ mongoose.connect(uri).then(()=>console.log("connected to mongodb"))
 app.use(express.json())
 app.use(helmet())
 app.use(morgan("common"))
+
+app.use('/college_services/colleges', collegeRouter)
+app.use('/college_services/candidates', candidateRouter)
 
 app.listen(port, ()=>{
     console.log("server is running");
