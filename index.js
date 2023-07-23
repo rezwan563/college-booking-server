@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const collegeRouter = require('./routes/colleges')
 const candidateRouter = require('./routes/candidates')
+const reviewRouter = require('./routes/reviews')
 
 const port = process.env.PORT || 5000;
 
@@ -21,6 +22,7 @@ app.use(helmet())
 app.use(morgan("common"))
 
 app.use('/college_services/colleges', collegeRouter)
+app.use('/college_services/candidates', candidateRouter)
 app.use('/college_services/candidates', candidateRouter)
 
 app.listen(port, ()=>{
