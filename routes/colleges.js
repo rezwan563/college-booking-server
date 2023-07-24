@@ -1,18 +1,18 @@
-const router = require('express').Router()
-const College = require('../models/College')
+const router = require('express').Router();
+const College = require('../models/College');
 
 // create college
 router.post('/', async (req, res) =>{
     const newCollege = new College(req.body)
     try{
-        await newCollege.save()
-        res.status(200).json("new college added")
+        await newCollege.save();
+        res.status(200).json("new college added");
     }catch(err){
         res.status(500).json(err)
     }
 })
 // get a college
-router.get('/:id', async (res, res) =>{
+router.get('/:id', async (req, res) =>{
     try{
         const singleCollege = await College.findById(req.params.id)
         res.status(200).json(singleCollege)
@@ -50,3 +50,5 @@ router.delete('/:id', async (req, res)=>{
         res.status(500).json(err)
     }
 })
+
+module.exports = router;

@@ -17,7 +17,7 @@ rating:{
     required:true,
 },
 established:{
-    type:Date,
+    type:Number,
     
 },
 students:{
@@ -44,6 +44,9 @@ research:{
     type:Array,
     default:[],
     required:true
+},
+history:{
+    type:String,
 }
 
 

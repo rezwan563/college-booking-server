@@ -5,31 +5,38 @@ const CandidateSchema = new mongoose.Schema({
         type:String,
         min: 3,
         max: 20,
-        required: true,
+        default:''
     },
     img:{
         type:String,
         default:"",
-        required:true,
     },
     subject:{
         type:String,
         default:"",
-        required:true,
     },
     email:{
         type:String,
+        required:true,
+        default:""
     },
     phone:{
         type:Number,
+        default: "",
     },
     address:{
         type:String,
+        default:""
     },
     dob:{
         type:Date,
+        default:"",
+    },
+    review:{
+        type:String,
+        default:"",
     }
     
-})
+},{timestamps:true})
 
 module.exports = mongoose.model("Candidate", CandidateSchema)
